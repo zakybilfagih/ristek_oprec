@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ristek_webdev_api',
+    'ristek_webdev_frontend',
     'rest_framework'
 ]
 
