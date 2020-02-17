@@ -9,3 +9,6 @@ class CommentViewSet(viewsets.ModelViewSet):
     permission_classes=[
         permissions.AllowAny
     ]
+
+    def destroy(self, request, pk=None):
+        pass
