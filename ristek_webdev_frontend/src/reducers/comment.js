@@ -1,7 +1,8 @@
 import { commentTypes } from "../actions/types.js";
 
 const initialState = {
-    comments: []
+    comments: [],
+    count: 0
 };
 
 export default (state = initialState, action) => {
@@ -9,12 +10,14 @@ export default (state = initialState, action) => {
         case commentTypes.GET:
             return {
                 ...state,
-                comments: action.payload
+                comments: action.payload,
+                count: action.payload.length
             };
         case commentTypes.ADD:
             return {
                 ...state,
-                comments: [...state.comments, action.payload]
+                comments: [...state.comments, action.payload],
+                count: state.comments.length + 1
             };
         default:
             return state;

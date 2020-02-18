@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 
-import { getComments, addComment } from "../actions/comment";
 import { useDispatch, useSelector } from "react-redux";
+import { getComments, addComment } from "../actions/comment";
 
-const Comments = () => {
-    const dispatch = useDispatch();
+import Comment from "./Comments/Comment";
+
+export default function Comments() {
     const comments = useSelector(state => state.comment.comments);
+    const comments_count = useSelector(state => state.comment.count);
+
+    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getComments());
     }, []);
@@ -13,15 +17,8 @@ const Comments = () => {
     return (
         <>
             {comments.map(comment => {
-                return (
-                    <div key={comment.id}>
-                        <h1>{comment.name}</h1>
-                        <p>{comment.text}</p>
-                    </div>
-                );
+                return <Comment {...comment} key={comment.id} />;
             })}
         </>
     );
-};
-
-export default Comments;
+}
