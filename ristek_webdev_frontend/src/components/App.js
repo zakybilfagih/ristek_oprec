@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
+import { Provider } from "react-redux";
+import store from "../store";
+
+import Comments from "./Comments";
+
 const AppContainer = styled.div`
     h1 {
         color: blue;
@@ -10,9 +15,11 @@ const AppContainer = styled.div`
 
 function App() {
     return (
-        <AppContainer>
-            <h1>Hellow</h1>
-        </AppContainer>
+        <Provider store={store}>
+            <AppContainer>
+                <Comments />
+            </AppContainer>
+        </Provider>
     );
 }
 
