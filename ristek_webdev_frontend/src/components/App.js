@@ -6,10 +6,18 @@ import { Provider } from "react-redux";
 import store from "../store";
 
 import Comments from "./Comments";
+import Header from "./Header";
+import "normalize.css";
 
 const AppContainer = styled.div`
-    h1 {
-        color: blue;
+    > .container {
+        height: 100vh;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    > .container > div {
+        padding-top: 60px;
     }
 `;
 
@@ -17,7 +25,16 @@ function App() {
     return (
         <Provider store={store}>
             <AppContainer>
-                <Comments />
+                <Header />
+                <div className="container">
+                    <Comments />
+                </div>
+                <div className="container">
+                    <Comments />
+                </div>
+                <div className="container">
+                    <Comments />
+                </div>
             </AppContainer>
         </Provider>
     );
