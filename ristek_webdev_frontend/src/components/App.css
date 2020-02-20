@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}

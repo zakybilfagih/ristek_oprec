@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
@@ -7,34 +7,59 @@ import store from "../store";
 
 import Comments from "./Comments";
 import Header from "./Header";
+import Landing from "./Landing";
+
 import "normalize.css";
+import "./App.css";
+import Overlay from "./utils/Overlay";
 
 const AppContainer = styled.div`
-    > .container {
-        height: 100vh;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
+    font-size: 1.5rem;
 
-    > .container > div {
-        padding-top: 60px;
+    > section {
+        height: 100vh;
     }
 `;
 
 function App() {
+    const [menuOverlay, setMenuOverlay] = useState(false);
+    const [width, setWidth] = useState(window.innerWidth);
+    const [scroll, setScroll] = useState(window.pageYOffset);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWidth(window.innerWidth);
+        };
+
+        const handleScroll = () => {
+            const currentScroll = window.pageYOffset;
+            setScroll(currentScroll);
+        };
+
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        width > 800 && setMenuOverlay(false);
+    }, [width]);
+
+    const vis = scroll > 500;
+
     return (
         <Provider store={store}>
             <AppContainer>
-                <Header />
-                <div className="container">
-                    <Comments />
-                </div>
-                <div className="container">
-                    <Comments />
-                </div>
-                <div className="container">
-                    <Comments />
-                </div>
+                <Header {...{ setMenuOverlay, scroll }} />
+                <Landing />
+                <section id="about">
+                    <h1>heyy</h1>
+                </section>
+                {menuOverlay && <Overlay {...{ vis, setMenuOverlay }} />}
             </AppContainer>
         </Provider>
     );
