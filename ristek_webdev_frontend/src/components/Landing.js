@@ -23,12 +23,11 @@ const LandingContainer = styled.section`
 
     .landing-text h1 {
         font-size: 2.5em;
-        color: white;
         margin: 0;
     }
 
     .landing-text h1 span {
-        background-color: #1abc9c;
+        background-color: white;
         font-family: "Josefin Sans";
     }
 
@@ -36,13 +35,13 @@ const LandingContainer = styled.section`
         margin: 0.5em 0;
         font-family: "Open Sans";
         text-align: center;
+        line-height: 40px;
     }
 
     .landing-text p span {
         background-color: white;
-        color: #1abc9c;
-        line-height: 40px;
     }
+
     @media screen and (min-width: 800px) {
         .landing-text p {
             text-align: left;
@@ -67,10 +66,8 @@ export default function Landing() {
                         <span>Halo !</span>
                     </h1>
                     <p>
-                        <span>
-                            Saya Zaky Bilfagih, passionate dengan web
-                            development. Take a look :)
-                        </span>
+                        Saya <span>Zaky Bilfagih</span>, passionate dengan{" "}
+                        <span>web development</span>. Take a look :)
                     </p>
                 </div>
             </div>

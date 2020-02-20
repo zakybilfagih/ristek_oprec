@@ -8,6 +8,7 @@ import store from "../store";
 import Comments from "./Comments";
 import Header from "./Header";
 import Landing from "./Landing";
+import About from "./About";
 
 import "normalize.css";
 import "./App.css";
@@ -56,9 +57,7 @@ function App() {
             <AppContainer>
                 <Header {...{ setMenuOverlay, scroll }} />
                 <Landing />
-                <section id="about">
-                    <h1>heyy</h1>
-                </section>
+                <About />
                 {menuOverlay && <Overlay {...{ vis, setMenuOverlay }} />}
             </AppContainer>
         </Provider>

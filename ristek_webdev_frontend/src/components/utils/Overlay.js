@@ -12,7 +12,7 @@ const OverlayContainer = styled.div`
     top: 0;
     height: 100%;
     width: 100%;
-    background: #1abc9c;
+    background: black;
     animation: menu 0.2s ease-in;
     z-index: 999;
 
@@ -30,7 +30,7 @@ const OverlayContainer = styled.div`
         background: none;
         align-self: flex-end;
         margin-top: 60px;
-        margin-right: 12px;
+        margin-right: 14px;
     }
 
     .container {
