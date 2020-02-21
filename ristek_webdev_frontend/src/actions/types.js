@@ -1,4 +1,8 @@
 export const commentTypes = {
-    GET: "GET",
-    ADD: "ADD"
+    COMMENT_GET: "COMMENT_GET",
+    COMMENT_ADD: "COMMENT_ADD"
+};
+
+export const repoTypes = {
+    REPO_GET: "REPO_GET"
 };

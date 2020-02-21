@@ -30,7 +30,7 @@ const OverlayContainer = styled.div`
         background: none;
         align-self: flex-end;
         margin-top: 60px;
-        margin-right: 14px;
+        margin-right: 15px;
     }
 
     .container {

@@ -90,7 +90,9 @@ export default function Header({ setMenuOverlay, scroll }) {
                 style={vis ? { paddingTop: 0, paddingBottom: 0 } : null}
             >
                 <div className="logo">
-                    <h2>zb.</h2>
+                    <h2>
+                        <a href="#landing">zb.</a>
+                    </h2>
                 </div>
                 <div
                     className="toggle"
