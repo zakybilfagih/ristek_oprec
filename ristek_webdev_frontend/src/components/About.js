@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { getRepos } from "../actions/repo";
+import RepoList from "./About/RepoList";
 
 const AboutContainer = styled.section`
     .container {
@@ -58,59 +57,6 @@ const AboutContainer = styled.section`
         font-size: 1rem;
     }
 
-    .github-repos {
-        height: 250px;
-    }
-
-    .repo-container {
-        font-family: "Open Sans";
-        height: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        overflow-x: auto;
-        background: #11aa44;
-        padding: 0 20px;
-    }
-
-    .repo-container > * {
-        margin-right: 20px;
-    }
-    .repo-card {
-        display: flex;
-        flex-direction: column;
-        min-width: 276px;
-        background: black;
-        color: white;
-        height: 80%;
-        flex: 0 0 auto;
-    }
-
-    .repo-header {
-        font-family: "Josefin Sans";
-        padding: 5px 10px;
-        border-bottom: 1px solid white;
-    }
-
-    .repo-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        margin: 0 auto;
-        overflow-y: auto;
-    }
-
-    .repo-content p {
-        flex: 1;
-        font-size: 20px;
-    }
-
-    .repo-content ul {
-        font-size: 18px;
-        padding-left: 1.2rem;
-    }
-
     @media screen and (min-width: 800px) {
         .content {
             flex-direction: row;
@@ -136,13 +82,6 @@ const AboutContainer = styled.section`
 `;
 
 export default function About() {
-    const dispatch = useDispatch();
-    const reposData = useSelector(state => state.repo.repos);
-
-    useEffect(() => {
-        dispatch(getRepos());
-    }, []);
-
     return (
         <AboutContainer id="about">
             <div className="container">
@@ -182,32 +121,7 @@ export default function About() {
                         </div>
 
                         <h3>See my ongoing projects!</h3>
-                        <div className="github-repos">
-                            <div className="repo-container">
-                                {reposData.map(repo => {
-                                    return (
-                                        <div
-                                            className="repo-card"
-                                            key={repo.id}
-                                        >
-                                            <div className="repo-header">
-                                                {repo.name}
-                                            </div>
-                                            <div className="repo-content">
-                                                <p>
-                                                    {repo.description
-                                                        ? repo.description
-                                                        : "No description available :("}
-                                                </p>
-                                                <ul>
-                                                    <li>{repo.language}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
+                        <RepoList />
                     </div>
                     <div className="section-graphic">
                         <img

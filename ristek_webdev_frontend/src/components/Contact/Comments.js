@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getComments, addComment } from "../actions/comment";
+import { getComments, addComment } from "../../actions/comment";
 
-import Comment from "./Comments/Comment";
+import Comment from "./Comment";
 
 export default function Comments() {
     const comments = useSelector(state => state.comment.comments);

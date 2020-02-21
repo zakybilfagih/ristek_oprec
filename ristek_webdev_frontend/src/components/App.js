@@ -5,14 +5,13 @@ import styled from "styled-components";
 import { Provider } from "react-redux";
 import store from "../store";
 
-import Comments from "./Comments";
 import Header from "./Header";
 import Landing from "./Landing";
 import About from "./About";
 
 import "normalize.css";
 import "./App.css";
-import Overlay from "./utils/Overlay";
+import Overlay from "./Header/Overlay";
 
 const AppContainer = styled.div`
     font-size: 1.5rem;
