@@ -1,0 +1,1 @@
+web: gunicorn ristek_webdev.wsgi
