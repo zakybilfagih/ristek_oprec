@@ -13,16 +13,16 @@ export default (state = initialState, action) => {
                 ...state,
                 loading: true
             };
-        case commentTypes.COMMENT_SUCESS_GET:
+        case commentTypes.COMMENT_SUCCESS_GET:
             return {
                 ...state,
                 comments: action.payload,
                 loading: false
             };
-        case commentTypes.COMMENT_SUCESS_ADD:
+        case commentTypes.COMMENT_SUCCESS_ADD:
             return {
                 ...state,
-                comments: [...state.comments, action.payload],
+                comments: [action.payload, ...state.comments],
                 loading: false
             };
         case commentTypes.COMMENT_ERROR:

@@ -3,6 +3,9 @@ import styled from "styled-components";
 import RepoList from "./About/RepoList";
 
 const AboutContainer = styled.section`
+    min-height: 100vh;
+    height: initial !important;
+
     .container {
         max-width: 1400px;
         width: 90%;

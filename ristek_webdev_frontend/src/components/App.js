@@ -13,6 +13,7 @@ import About from "./About";
 import "normalize.css";
 import "./App.css";
 import Comments from "./Contact/Comments";
+import Contact from "./Contact";
 
 const AppContainer = styled.div`
     font-size: 1.5rem;
@@ -58,6 +59,7 @@ function App() {
                 <Header {...{ setMenuOverlay, scroll }} />
                 <Landing />
                 <About />
+                <Contact />
                 {menuOverlay && <Overlay {...{ vis, setMenuOverlay }} />}
             </AppContainer>
         </Provider>

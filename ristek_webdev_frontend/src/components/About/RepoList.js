@@ -42,6 +42,7 @@ export default function RepoList() {
                             language: repo.language,
                             url: repo.html_url
                         }}
+                        key={repo.html_url}
                     />
                 ))}
             </div>

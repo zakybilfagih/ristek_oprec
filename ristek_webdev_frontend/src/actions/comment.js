@@ -6,10 +6,10 @@ export const getComments = () => dispatch => {
     fetch("/api/comment/")
         .then(r => r.json())
         .then(d => {
-            dispatch({ type: commentTypes.COMMENT_SUCESS_GET, payload: d });
+            dispatch({ type: commentTypes.COMMENT_SUCCESS_GET, payload: d });
         })
         .catch(e => {
-            console.log("itemm");
+            console.log(e);
             dispatch({ type: commentTypes.COMMENT_ERROR, payload: e });
         });
 };
@@ -31,5 +31,8 @@ export const addComment = (name, text) => dispatch => {
                 payload: { name: d.name, text: d.text }
             });
         })
-        .catch(e => dispatch({ type: commentTypes.COMMENT_ERROR, payload: e }));
+        .catch(e => {
+            console.log(e);
+            dispatch({ type: commentTypes.COMMENT_ERROR, payload: e });
+        });
 };
