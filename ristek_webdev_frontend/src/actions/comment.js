@@ -2,16 +2,21 @@ import { commentTypes } from "./types.js";
 
 // GET COMMENTS
 export const getComments = () => dispatch => {
+    dispatch({ type: commentTypes.COMMENT_LOAD });
     fetch("/api/comment/")
         .then(r => r.json())
         .then(d => {
-            dispatch({ type: commentTypes.COMMENT_GET, payload: d });
+            dispatch({ type: commentTypes.COMMENT_SUCESS_GET, payload: d });
         })
-        .catch(e => console.log(e));
+        .catch(e => {
+            console.log("itemm");
+            dispatch({ type: commentTypes.COMMENT_ERROR, payload: e });
+        });
 };
 
 // ADD COMMENT
 export const addComment = (name, text) => dispatch => {
+    dispatch({ type: commentTypes.COMMENT_LOAD });
     fetch("/api/comment/", {
         method: "POST",
         headers: {
@@ -21,11 +26,10 @@ export const addComment = (name, text) => dispatch => {
     })
         .then(r => r.json())
         .then(d => {
-            console.log("heyy");
             dispatch({
-                type: commentTypes.COMMENT_ADD,
+                type: commentTypes.COMMENT_SUCCESS_ADD,
                 payload: { name: d.name, text: d.text }
             });
         })
-        .catch(e => console.log(e));
+        .catch(e => dispatch({ type: commentTypes.COMMENT_ERROR, payload: e }));
 };

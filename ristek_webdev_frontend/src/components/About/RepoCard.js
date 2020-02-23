@@ -11,6 +11,10 @@ const RepoCardContainer = styled.div`
     height: 80%;
     flex: 0 0 auto;
 
+    a {
+        padding: 0;
+    }
+
     .repo-header {
         font-family: "Josefin Sans";
         padding: 5px 10px;
@@ -53,9 +57,7 @@ export default function RepoCard({ name, description, language, url }) {
                 </a>
             </div>
             <div className="repo-content">
-                <p>
-                    {description ? description : "No description available :("}
-                </p>
+                <p>{description ? description : "No description available."}</p>
                 <ul>
                     <li>{language}</li>
                 </ul>

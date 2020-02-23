@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
@@ -6,12 +6,13 @@ import { Provider } from "react-redux";
 import store from "../store";
 
 import Header from "./Header";
+import Overlay from "./Header/Overlay";
 import Landing from "./Landing";
 import About from "./About";
 
 import "normalize.css";
 import "./App.css";
-import Overlay from "./Header/Overlay";
+import Comments from "./Contact/Comments";
 
 const AppContainer = styled.div`
     font-size: 1.5rem;
