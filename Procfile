@@ -1,1 +1,1 @@
-web: gunicorn ristek_webdev.wsgi
+web: gunicorn ristek_webdev.wsgi --log-file - --log-level debug
