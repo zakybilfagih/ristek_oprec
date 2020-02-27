@@ -44,6 +44,7 @@ const ContactContainer = styled.section`
         overflow-y: auto;
         justify-content: flex-end;
         height: 360px;
+        width: 100%;
     }
 
     .content-right > div {
