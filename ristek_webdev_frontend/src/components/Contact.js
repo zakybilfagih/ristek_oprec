@@ -19,9 +19,10 @@ const ContactContainer = styled.section`
 
     .content {
         font-family: "Josefin Sans";
-        margin: 100px 0;
         display: flex;
+        align-items: center;
         flex-direction: column;
+        margin-top: 100px;
         width: 100%;
     }
 
